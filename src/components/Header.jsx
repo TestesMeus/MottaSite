@@ -4,7 +4,7 @@ import { FaPhone } from "react-icons/fa";
 
 // Importando a fonte League Gothic do Google Fonts
 const GlobalStyle = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
 `;
 
 // Estilização do header
@@ -39,7 +39,7 @@ const NamePage = styled.h1`
   letter-spacing: 4px;
   text-transform: uppercase;
   margin: 0;
-  font-family: 'League Gothic', sans-serif;
+  font-family: "League Gothic", sans-serif;
   position: relative;
   display: inline-block;
   line-height: 1;
@@ -50,7 +50,7 @@ const NamePage = styled.h1`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -5px;
@@ -74,7 +74,7 @@ const SubNamePage = styled.h3`
   font-weight: 400;
   letter-spacing: 2px;
   margin: 0;
-  font-family: 'League Gothic', sans-serif;
+  font-family: "League Gothic", sans-serif;
   opacity: 0.9;
   text-transform: uppercase;
 
@@ -133,7 +133,7 @@ const Header = () => {
           <NamePage>MOTTA</NamePage>
           <SubNamePage>SERRALHERIA</SubNamePage>
         </NameLogo>
-        <ContactButton href="#contato">
+        <ContactButton href="https://wa.me/5521993877515?text=Oi%20eu%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20voc%C3%AA">
           <FaPhone /> Contato
         </ContactButton>
       </HeaderOptions>
