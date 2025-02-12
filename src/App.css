@@ -1,0 +1,23 @@
+#root {
+--primary:#000E2B;
+--secondary:#FB5231;
+--neutralLigth:#FFFFFF;
+--neutralGrey:#2C2C2C;
+--focusYellow:#FFD166;
+--focusGreen:#06D6A0;
+--suportBlue:#A2DDF0;
+--suportOrange:#FF9F6E;
+}
+
+/*---------------------------- CSS Resest ----------------------------*/
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+}
+
