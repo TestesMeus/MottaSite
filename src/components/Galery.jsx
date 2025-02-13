@@ -17,10 +17,11 @@ const GaleryContainer = styled.div`
   }
 `;
 
-const Image = styled.img`
+const ImageContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: 300px; /* Altura fixa para o contêiner */
   border-radius: 8px;
+  overflow: hidden; /* Esconde o excesso da imagem */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -28,6 +29,13 @@ const Image = styled.img`
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+  border-radius: 8px;
 `;
 
 const Loading = styled.div`
@@ -60,10 +68,7 @@ const Galery = () => {
 
       if (data.length > 0) {
         const newImages = data
-          .filter(
-            (file) =>
-              file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/i)
-          ) // Filtra apenas imagens
+          .filter((file) => file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/i)) // Filtra apenas imagens
           .map((file) => file.download_url); // Pega as URLs das imagens
 
         setImages((prevImages) => [...prevImages, ...newImages]);
@@ -110,13 +115,14 @@ const Galery = () => {
     <>
       <GaleryContainer>
         {images.map((imageUrl, index) => (
-          <Image key={index} src={imageUrl} alt={`Imagem ${index + 1}`} />
+          <ImageContainer key={index}>
+            <Image src={imageUrl} alt={`Imagem ${index + 1}`} />
+          </ImageContainer>
         ))}
       </GaleryContainer>
       {loading && <Loading>Carregando mais fotos...</Loading>}
       {!hasMore && <Loading>Você viu todas as fotos!</Loading>}
-      <div id="load-more" style={{ height: "10px" }}></div>{" "}
-      {/* Alvo para o Intersection Observer */}
+      <div id="load-more" style={{ height: "10px" }}></div> {/* Alvo para o Intersection Observer */}
     </>
   );
 };
