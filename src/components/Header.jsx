@@ -133,7 +133,7 @@ const Header = () => {
           <NamePage>MOTTA</NamePage>
           <SubNamePage>SERRALHERIA</SubNamePage>
         </NameLogo>
-        <ContactButton href="https://wa.me/5521993877515?text=Oi%20eu%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20voc%C3%AA">
+        <ContactButton id="contact-button" href="https://wa.me/5521993877515?text=Oi%20eu%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20voc%C3%AA">
           <FaPhone /> Contato
         </ContactButton>
       </HeaderOptions>
